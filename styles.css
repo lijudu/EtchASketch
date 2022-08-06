@@ -1,27 +1,48 @@
+:root {
+    --rowNum: ""
+    --colNum: ""
+}
+
 h1 {
     color: pink;
     display: flex;
     justify-content: center;
 }
 
+.gridCenter {
+    display: grid; 
+    justify-content: center;
+}
+
 #gridContainer {
+    border: 1px solid black;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-rows: repeat(var(--rowNum), 1fr);
+    grid-template-columns: repeat(var(--colNum), auto);
+    width: 400px;
+    height: 400px;
+}
+.gridRow {
+    border: 1px solid lightgray;
+}
+
+.BTN {
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 30px;
+    padding-top: 50px;
+}
+
+.mainBody {
     display: flex;
     justify-content: center;
 
 }
 
-.gridRow {
-    border: 1px solid grey;
-    min-width: 20px;
-    min-height: 20px; 
-    margin-right: -1px;
-    margin-left: -1px;
-}
-
-.cell {
-    border: 1px solid grey;
-    min-width: 20px;
-    min-height: 20px;
-    margin-top: -1px;
-    margin-bottom: -1px;
+.colorBTN, .randomBTN, .eraserBTN, .clearBTN, .shadeBTN {
+    width: 100px;
+    height: 40px;
 }
