@@ -1,6 +1,6 @@
+// Create dynamic grid 
 const container = document.getElementById("gridContainer")
 let rows = document.getElementsByClassName("gridRow")
-
 
 function makeGrid(a) {
     for (i = 0; i < (a * a); i++){

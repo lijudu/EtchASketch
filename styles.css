@@ -27,13 +27,14 @@ h1 {
     border: 1px solid lightgray;
 }
 
+
 .BTN {
     display: flex; 
     align-items: center;
     flex-direction: column;
     gap: 20px;
     padding-right: 30px;
-    padding-top: 50px;
+    padding-top: 25px;
 }
 
 .mainBody {
@@ -43,6 +44,31 @@ h1 {
 }
 
 .colorBTN, .randomBTN, .eraserBTN, .clearBTN, .shadeBTN {
-    width: 100px;
+    width: 133px;
     height: 40px;
+}
+
+.gridRange {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.slider {
+    appearance: none; 
+    background-color: lightpink; 
+    height: 10px;
+    border-radius: 4px;
+    width: 133px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: lightblue;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+}
+
+body {
+    background-color: #F5E8F2;
 }
