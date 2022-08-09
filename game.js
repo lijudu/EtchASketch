@@ -11,4 +11,20 @@ function makeGrid(a) {
     document.documentElement.style.setProperty("--colNum", a)
 };
 
-makeGrid(10)
+makeGrid(20)
+
+// set event listener for click
+// change background color when hovering using changing div background color
+var grids = document.querySelectorAll(".gridRow")
+
+container.addEventListener("click", gridColor)
+
+function gridColor() {
+    grids.forEach(clickListen);
+    function clickListen(grids) {
+        grids.addEventListener("mouseover", function(e){
+             e.target.style.backgroundColor = "red ";
+                     });
+                };
+            };
+
