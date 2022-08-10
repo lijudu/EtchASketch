@@ -44,10 +44,15 @@ h1 {
 
 }
 
-.colorBTN, .randomBTN, .eraserBTN, .clearBTN, .shadeBTN {
+.randomBTN, .eraserBTN, .clearBTN, .shadeBTN {
     width: 133px;
     height: 40px;
     background-color: lightblue;
+}
+
+#colorPicker {
+    width: 133px;
+    height: 40px;
 }
 
 .gridRange {
