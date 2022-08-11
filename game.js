@@ -1,4 +1,11 @@
 // create grid toggle (min 10, max 50, start 25)
+var slider = document.getElementById("selectRange")
+var rangeGiven = document.getElementById("range")
+var setGrid = slider.value
+
+slider.oninput = function() {
+    rangeGiven.innerText = `${this.value} x ${this.value}`
+}
 
 
 
