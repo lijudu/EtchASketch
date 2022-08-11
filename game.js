@@ -1,8 +1,10 @@
 // create grid toggle (min 10, max 50, start 25)
 
+
+
 // Create dynamic grid 
 const container = document.getElementById("gridContainer")
-let rows = document.getElementsByClassName("gridRow")
+var rows = document.getElementsByClassName("gridRow")
 
 function makeGrid(a) {
     for (i = 0; i < (a * a); i++){
@@ -13,7 +15,7 @@ function makeGrid(a) {
     document.documentElement.style.setProperty("--colNum", a)
 };
 
-makeGrid(25)
+makeGrid(10)
 
 // select color button 
 var colorInput = document.getElementById("colorPicker")
@@ -34,13 +36,6 @@ function ranHex() {
 var randomColorBTN = document.querySelector(".randomBTN")
 randomColorBTN.addEventListener("click", ranHex)
 
-// shade button 
-function shade(){
-    defaultColor = "shade"
-}
-
-var shadeBTN = document.querySelector(".shadeBTN")
-
 // eraser button 
 function erase(){
     defaultColor ="eraser"
@@ -48,6 +43,16 @@ function erase(){
 
 var eraserBTN = document.querySelector(".eraserBTN")
 eraserBTN.addEventListener("click", erase)
+
+// clear board button
+function clearBoard(){
+    grids.forEach(clear);
+    function clear(grids){
+        grids.style.backgroundColor = "#F5E8F2"
+    };
+};  
+var clearBTN = document.querySelector(".clearBTN")
+clearBTN.addEventListener("click", clearBoard)
 
 // set event listener for click, change background color when mouseover
 var grids = document.querySelectorAll(".gridRow")
@@ -69,5 +74,5 @@ function colorGrid(e) {
         e.target.style.backgroundColor = `hsl(${Math.random() * 360}, 60%, 70%)`; 
     } else if (defaultColor =="eraser"){
         e.target.style.backgroundColor = "#F5E8F2";
-    }; 
-    };
+    }
+};
