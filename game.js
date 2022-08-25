@@ -32,21 +32,37 @@ slider.oninput = function() {
 
 // set event listener for click, change background color when mouseover
 var grids = document.querySelectorAll(".gridRow")
-container.addEventListener("mousedown", colorGrid, true)
+let mouseDown = false
 
+const mouseDownListener = (event) => {
+  mouseDown = true
+};
 
+const mouseMoveListener = (event) => {
+ if (!mouseDown) return
+ colorGrid(event)
+}
+
+const mouseUpListener = (event) => {
+ mouseDown = false
+}
 
 function colorGrid(e) {
-    if (defaultColor == "none") {
+    if (defaultColor == "none" && mouseDown == true) {
         e.target.style.backgroundColor = "#b96a9a";
-    } else if (defaultColor == "selected") {
+    } else if (defaultColor == "selected" && mouseDown == true) {
         e.target.style.backgroundColor = colorPicked; 
-    } else if (defaultColor == "random") {
+    } else if (defaultColor == "random" && mouseDown == true) {
         e.target.style.backgroundColor = `hsl(${Math.random() * 360}, 60%, 70%)`; 
-    } else if (defaultColor =="eraser"){
+    } else if (defaultColor =="eraser" && mouseDown == true){
         e.target.style.backgroundColor = "#F5E8F2";
     }
 };
+
+container.addEventListener("mousedown", mouseDownListener)
+container.addEventListener("mousemove", mouseMoveListener)
+container.addEventListener("mouseup", mouseUpListener)
+
 
 // select color button 
 var colorInput = document.getElementById("colorPicker")
