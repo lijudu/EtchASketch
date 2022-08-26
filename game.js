@@ -34,18 +34,25 @@ slider.oninput = function() {
 var grids = document.querySelectorAll(".gridRow")
 let mouseDown = false
 
-const mouseDownListener = (event) => {
-  mouseDown = true
-};
+const mouseDownListener = event => mouseDown = true
 
-const mouseMoveListener = (event) => {
+const mouseMoveListener = event => {
  if (!mouseDown) return
  colorGrid(event)
-}
+};
 
-const mouseUpListener = (event) => {
- mouseDown = false
+const mouseUpListener = event => mouseDown = false
+
+// select color button 
+var colorInput = document.getElementById("colorPicker")
+var colorPicked = ""
+var defaultColor = "none"
+
+function newColor(){
+    colorPicked = this.value
+    defaultColor = "selected" 
 }
+colorInput.addEventListener("change", newColor)
 
 function colorGrid(e) {
     if (defaultColor == "none" && mouseDown == true) {
@@ -62,18 +69,6 @@ function colorGrid(e) {
 container.addEventListener("mousedown", mouseDownListener)
 container.addEventListener("mousemove", mouseMoveListener)
 container.addEventListener("mouseup", mouseUpListener)
-
-
-// select color button 
-var colorInput = document.getElementById("colorPicker")
-var colorPicked = ""
-var defaultColor = "none"
-
-function newColor(){
-    colorPicked = this.value
-    defaultColor = "selected" 
-}
-colorInput.addEventListener("change", newColor)
 
 // rainbow mode button  
 function ranHex() {
